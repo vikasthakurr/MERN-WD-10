@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 800px;
+        height: 500px;
+        background-color: beige;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        /* justify-content: flex-end;
+        align-content: flex-end; */
+        /* justify-items: center;
+        align-items: center; */
+      }
+      .child {
+        /* width: 100px;
+        height: 100px; */
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .child-1 {
+        background-color: green;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+      .child-2 {
+        background-color: blue;
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+      .child-3 {
+        background-color: yellow;
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+      .child-4 {
+        background-color: aquamarine;
+      }
+      .child-5 {
+        background-color: orange;
+      }
+      .child-6 {
+        background-color: brown;
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child child-1">child-1</div>
+      <div class="child child-2">child-2</div>
+      <div class="child child-3">child-3</div>
+      <div class="child child-4">child-4</div>
+      <div class="child child-5">child-5</div>
+      <div class="child child-6">child-6</div>
+    </div>
+  </body>
+</html>

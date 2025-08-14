@@ -4,3 +4,7 @@ github and its cheatsheet: https://docs.google.com/document/d/19ILAU7K9km2aqRB9H
 css selectors:https://docs.google.com/document/d/1pcOflzSRra85TkqQJZQwn0mUsNVfg6Y3EVFRci6sPrU/edit?tab=t.0
 
 css units:https://docs.google.com/document/d/16BHhcJzFk1DJ-_50o4sz3WbYWXtHSI95SSxgPErvj3g/edit?tab=t.0
+
+
+flex-quiz-solution:https://gist.github.com/lukasrudnik/c72cafebd0db5bae4aa5563b24e73fd2
+flex-quiz: https://flexboxfroggy.com/
