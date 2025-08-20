@@ -8,3 +8,8 @@ css units:https://docs.google.com/document/d/16BHhcJzFk1DJ-_50o4sz3WbYWXtHSI95SS
 
 flex-quiz-solution:https://gist.github.com/lukasrudnik/c72cafebd0db5bae4aa5563b24e73fd2
 flex-quiz: https://flexboxfroggy.com/
+
+grid: https://docs.google.com/document/d/14JxZa2ebdk05wipGXKV4um0jnkQfbzPbviTEl6sqOnM/edit?usp=sharing
+css Position:https://docs.google.com/document/d/1aHukHz60ppWAK3JeNAk1JJPDwOMg4og74MWrPW3KhcE/edit?usp=sharing
+
+css media query: https://docs.google.com/document/d/13J1AUU_uxwolzjczXDw2FJdFBkc6DutDDKfKdkqWXJQ/edit?usp=sharing
