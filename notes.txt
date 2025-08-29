@@ -16,3 +16,6 @@ css media query: https://docs.google.com/document/d/13J1AUU_uxwolzjczXDw2FJdFBkc
 
 
 video link: https://videos.pexels.com/video-files/32429353/13831664_2560_1440_60fps.mp4
+
+data types: https://docs.google.com/document/d/1qYMb06vn5s13t1RLK2pITKhjd2LWb_yhv72Cppg9JCY/edit?tab=t.0
+
