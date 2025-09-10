@@ -24,17 +24,17 @@
 // console.log(person);
 
 // Creating a nested object with another object as a property
-let person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 50,
-  eyeColor: "blue",
-  address: {
-    street: "123 main st",
-    city: "New York",
-    state: "NY",
-  },
-};
+// let person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 50,
+//   eyeColor: "blue",
+//   address: {
+//     street: "123 main st",
+//     city: "New York",
+//     state: "NY",
+//   },
+// };
 
 // Shallow copy using spread operator (does NOT deeply copy nested objects)
 // let person1 = { ...person };
@@ -44,9 +44,9 @@ let person = {
 // let person1 = structuredClone(person); // method1
 
 // Deep copy using JSON methods (works if object contains only serializable data)
-let person1 = JSON.stringify(person); // method2: converts object to JSON string
-console.log(person1); // Outputs the JSON string representation of the object
-console.log(typeof person1); // Outputs 'string'
+// let person1 = JSON.stringify(person); // method2: converts object to JSON string
+// console.log(person1); // Outputs the JSON string representation of the object
+// console.log(typeof person1); // Outputs 'string'
 
 // If you want to get the object back, use JSON.parse
 // let person1 = JSON.parse(JSON.stringify(person));
@@ -57,12 +57,12 @@ console.log(typeof person1); // Outputs 'string'
 // console.log(person);
 
 // Primitive types (like strings) are copied by value, not by reference
-let name = "vikas";
+// let name = "vikas";
 
-let name2 = name; // name2 is a copy of name
-name2 = "kumar"; // changing name2 does not affect name
-console.log(name2); // Outputs: kumar
-console.log(name);  // Outputs: vikas
+// let name2 = name; // name2 is a copy of name
+// name2 = "kumar"; // changing name2 does not affect name
+// console.log(name2); // Outputs: kumar
+// console.log(name);  // Outputs: vikas
 
 /*
   NOTES:
@@ -71,3 +71,64 @@ console.log(name);  // Outputs: vikas
   - structuredClone() and JSON methods can create deep copies, but JSON methods only work for serializable data (no functions, undefined, etc).
   - Primitives (string, number, boolean, etc) are always copied by value.
 */
+
+let response = {
+  status: 300,
+  data: {
+    name: "vikas",
+    age: 30,
+    isEmployed: true,
+    address: {
+      street: "123 main st",
+      city: "New York",
+      state: "NY",
+    },
+  },
+};
+
+// let { status } = response;
+// console.log(status);
+
+let {
+  data: { name },
+} = response;
+// console.log(name);
+
+//practice
+
+let response1 = {
+  status: 300,
+  header: {
+    type: "json",
+    version: 1.1,
+  },
+  body: {
+    name: "vikas",
+    age: 30,
+    isEmployed: true,
+    address: {
+      street: "123 main st",
+      city: "New York",
+      state: "NY",
+    },
+    footer: {
+      type: "json",
+      version: 1.1,
+    },
+  },
+};
+
+// function sum(a, b) {
+//   return a + b;
+// }
+
+function sum(...args) {
+  let sum = 0;
+  for (let i = 0; i < args.length; i++) {
+    sum += args[i];
+  }
+  return sum;
+}
+
+let res = sum(2, 4, 5, 6, 7, 8, 9, 6, 7, 8, 4, 4, 788);
+console.log(res);
