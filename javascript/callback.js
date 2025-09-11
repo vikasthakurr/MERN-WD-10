@@ -13,17 +13,14 @@ function makeMaggi(raw, cb) {
   console.log("we are going to make maggi");
   cb();
 }
-
 function boilWater(cb) {
   console.log("boiling the water");
   cb();
 }
-
 function finalStep(cb) {
   console.log("adding masala into maggi");
   cb();
 }
-
 makeMaggi("raw", function () {
   boilWater(function () {
     finalStep(function () {
