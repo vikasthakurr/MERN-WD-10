@@ -31,3 +31,8 @@ Array.prototype.calculateTax = function (calculateFn) {
 let salary = [100, 200, 300, 400, 500];
 
 console.log(salary.calculateTax(calculateTwentyPercent));
+
+
+/* what is Hof 
+  High order function , A function which another function inside it known as HOF ..
+*/
