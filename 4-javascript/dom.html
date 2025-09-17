@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .para {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>this is targeted by tagname</h1>
+      <h1>this is again by tagname</h1>
+      <h1>this is again by tagname</h1>
+      <h2 class="heading-1">this is heading 1 by class</h2>
+      <h2 class="heading-1">this is again</h2>
+      <h3 id="heading-id">this is heading 1 by id</h3>
+    </div>
+
+    <script>
+      // DOM Manipulation Methods:
+
+      // getElementsByTagName: Selects all elements with a given tag name.
+      // Returns an HTMLCollection, which is a live collection of elements.
+      //   const res = document.getElementsByTagName("h1");
+
+      // getElementById: Selects a single element by its unique ID.
+      // Returns the element object if found, otherwise null.
+      //   const res = document.getElementById("heading-id");
+
+      // getElementsByClassName: Selects all elements that have a given CSS class.
+      // Returns an HTMLCollection.
+      //   const res = document.getElementsByClassName("heading-1");
+
+      // querySelectorAll: Selects all elements that match a specified CSS selector(s).
+      // Returns a static NodeList, which is not live.
+      //   const res = document.querySelectorAll(".heading-1");
+      //   console.log(res);
+
+      // --- Element Creation and Insertion ---
+
+      // createElement: Creates a new HTML element with the specified tag name.
+      //   const para = document.createElement("p");
+
+      // innerText: Sets or returns the text content of an element.
+      //   para.innerText = "this is injected by js";
+
+      // classList.add: Adds one or more class names to an element.
+      //   para.classList.add("para");
+
+      // appendChild: Appends a node as the last child of a specified parent node.
+      //   document.body.appendChild(para);
+
+      // querySelector: Selects the first element that matches a specified CSS selector.
+      const container = document.querySelector(".container");
+
+      // --- Node Traversal ---
+
+      // childNodes: Returns a NodeList of all child nodes of an element,
+      // including text nodes (whitespace) and comment nodes.
+      //   console.log(container.childNodes);
+
+      // parentNode: Returns the parent node of a specified node in the DOM tree.
+      const heading = document.querySelector(".heading-1");
+      console.log(heading.parentNode);
+    </script>
+  </body>
+</html>

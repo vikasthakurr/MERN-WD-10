@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grandparent {
+        width: 500px;
+        height: 500px;
+        background-color: red;
+      }
+      .parent {
+        width: 300px;
+        height: 300px;
+        background-color: green;
+      }
+      .child {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandparent">
+      <div class="parent">
+        <div class="child"></div>
+      </div>
+    </div>
+    <script>
+      // Select elements from the DOM
+      let grandparent = document.querySelector(".grandparent");
+      let parent = document.querySelector(".parent");
+      let child = document.querySelector(".child");
+
+      // addEventListener: Attaches an event handler to an element.
+      // It takes three arguments: the event type, a callback function, and an optional options object or a boolean for `useCapture`.
+
+      // Event Capturing (or Trickling): The event is first captured by the outermost element and propagated to the inner elements.
+      // This happens when the third argument to addEventListener is `true`.
+
+      // Event Bubbling: The event is first captured and handled by the innermost element and then propagated to outer elements.
+      // This is the default behavior if the third argument is `false` or omitted.
+
+      grandparent.addEventListener(
+        "click",
+        (event) => {
+          // The 'event' object contains properties with information about the event.
+          // For example, event.target is the element that triggered the event (the innermost element clicked).
+          // event.currentTarget is the element the event listener is attached to.
+          //   console.log("grandparent clicked");
+          console.log(event);
+        },
+        true // Use capturing phase
+      );
+
+      //   parent.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("parent clicked");
+      //     },
+      //     true // Use capturing phase
+      //   );
+
+      //   child.addEventListener(
+      //     "click",
+      //     () => {
+      //       console.log("child clicked");
+      //     },
+      //     true // Use capturing phase
+      //   );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 700px;
+        height: 500px;
+        background-color: beige;
+      }
+      .child {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        background-color: red;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="child child-1">child-1</div>
+      <div class="child child-2">child-2</div>
+      <div class="child child-3">child-3</div>
+      <div class="child child-4">child-4</div>
+    </div>
+    <p class="data"></p>
+    <script>
+      // Select the parent container
+      let container = document.querySelector(".container");
+
+      // Event Delegation: A pattern where you add a single event listener to a parent element
+      // instead of adding listeners to multiple child elements. This is more efficient.
+      // The listener on the parent can then check which child element triggered the event.
+
+      container.addEventListener("click", function (event) {
+        // The 'event.target' property is the key to event delegation.
+        // It refers to the actual element that was clicked (e.g., one of the 'child' divs),
+        // even though the event listener is on the parent 'container'.
+        // console.log("container clicked");
+        // console.log(event.target);
+
+        // Find the paragraph element to display the data
+        let para = document.querySelector(".data");
+
+        // Update the paragraph's text with the text from the clicked child element.
+        // This demonstrates how to act on the specific element that triggered the event.
+        para.innerText = event.target.innerText;
+      });
+    </script>
+  </body>
+</html>
