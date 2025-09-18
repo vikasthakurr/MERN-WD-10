@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        /* background-color: red; */
+        position: absolute;
+      }
+      .container {
+        width: 700px;
+        height: 500px;
+        background-color: beige;
+      }
+      .rectangle {
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="shape" placeholder="enter shape" />
+    <div class="container"></div>
+    <script>
+      let container = document.querySelector(".container");
+
+      container.addEventListener("click", (event) => {
+        let shapeInput = document.querySelector("#shape").value;
+
+        let colors = ["green", "red", "blue", "yellow", "black"];
+        let randomIndex = colors[Math.floor(Math.random() * colors.length)];
+        // console.log(randomIndex);
+
+        // console.log(event);
+        let shape = document.createElement("div");
+        shape.classList.add(shapeInput);
+        shape.style.backgroundColor = randomIndex;
+        shape.style.left = event.clientX - 50 + "px";
+        shape.style.top = event.clientY - 50 + "px";
+        container.appendChild(shape);
+      });
+    </script>
+  </body>
+</html>
