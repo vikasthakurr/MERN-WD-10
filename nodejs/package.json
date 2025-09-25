@@ -10,6 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "figlet": "^1.9.3"
+    "figlet": "^1.9.3",
+    "fs": "^0.0.1-security"
   }
 }
