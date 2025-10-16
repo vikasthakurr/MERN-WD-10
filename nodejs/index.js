@@ -10,28 +10,28 @@
 //   console.log(data);
 // });
 
-function sayHi(name) {
-  return `Hi, ${name}`;
-}
+// function sayHi(name) {
+//   return `Hi, ${name}`;
+// }
 
-function add(a, b) {
-  return a + b;
-}
+// function add(a, b) {
+//   return a + b;
+// }
 
-function subtract(a, b) {
-  return a - b;
-}
+// function subtract(a, b) {
+//   return a - b;
+// }
 
-function multiply(a, b) {
-  return a * b;
-}
+// function multiply(a, b) {
+//   return a * b;
+// }
 
-function divide(a, b) {
-  return a / b;
-}
+// function divide(a, b) {
+//   return a / b;
+// }
 
 //named export
 
 // export { sayHi, add, subtract, multiply, divide };
 //default export
-export default { sayHi, add, subtract, multiply, divide };
+// export default { sayHi, add, subtract, multiply, divide };
