@@ -163,3 +163,40 @@
 
 - Testing with Jest & React Testing Library
 - Deployment (Netlify, Vercel, GitHub Pages)
+
+## Intro to NodeJs
+
+- Introduction to Node.js
+- Environment Setup
+- First Node.js Program
+- Modules & Versioning
+- Custom Modules & Third-Party Modules
+- File System Module
+- Events Module
+- Path Module
+
+## Advanced NodeJs
+
+- Asynchronous Programming
+- Stream Module
+- HTTP Module
+- HTTP Server
+- HTTP Client
+- Express.js Basics
+- Express.js Routing
+- Middleware
+- Error Handling
+- Authentication & Authorization
+- Database Integration
+- Deployment
+
+## MongoDB
+
+- Introduction to MongoDB
+- CRUD Operations
+- Mongoose Basics
+- Mongoose Schema
+- Mongoose Models
+- Mongoose Validation
+- Mongoose Middleware
+- Mongoose Middlewares
