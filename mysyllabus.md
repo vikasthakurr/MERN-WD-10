@@ -185,10 +185,12 @@
 - Express.js Basics
 - Express.js Routing
 - Middleware
+- API Development
 - Error Handling
 - Authentication & Authorization
+- File Uploading using multer
 - Database Integration
-- Deployment
+- Web Sockets
 
 ## MongoDB
 
