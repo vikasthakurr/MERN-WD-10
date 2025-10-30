@@ -181,7 +181,7 @@
 - Stream Module
 - HTTP Module
 - HTTP Server
-- HTTP Client
+- HTTP Client;
 - Express.js Basics
 - Express.js Routing
 - Middleware
@@ -190,6 +190,7 @@
 - Authentication & Authorization
 - File Uploading using multer
 - Database Integration
+- bcrypt & JWT
 - Web Sockets
 
 ## MongoDB

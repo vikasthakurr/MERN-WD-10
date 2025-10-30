@@ -15,6 +15,8 @@
     "express": "^5.1.0",
     "figlet": "^1.9.3",
     "fs": "^0.0.1-security",
-    "multer": "^2.0.2"
+    "multer": "^2.0.2",
+    "path": "^0.12.7",
+    "socket.io": "^4.8.1"
   }
 }
