@@ -1,6 +1,19 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../redux/cartSlice.js";
 
 const Card = ({ productObj }) => {
+  const dispatch = useDispatch();
+  const productInCart = useSelector((state) =>
+    state.cart.find((item) => item.id === productObj.id)
+  );
+
+  const quantity = productInCart?.quantity || 0;
+
   const discountedPrice = (
     productObj.price -
     (productObj.price * productObj.discountPercentage) / 100
@@ -57,9 +70,30 @@ const Card = ({ productObj }) => {
           </p>
         </div>
         <div className="mt-4 grow flex items-end">
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors duration-300">
-            Add to Cart
-          </button>
+          {productInCart ? (
+            <div className="w-full flex items-center justify-between">
+              <button
+                onClick={() => dispatch(decreaseQuantity(productObj))}
+                className="px-3 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+              >
+                -
+              </button>
+              <span className="text-lg font-semibold">{quantity}</span>
+              <button
+                onClick={() => dispatch(increaseQuantity(productObj))}
+                className="px-3 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+              >
+                +
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => dispatch(addToCart(productObj))}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors duration-300"
+            >
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
     </div>

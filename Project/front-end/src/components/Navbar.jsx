@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+// import { useAuth } from "../context/AuthContext.jsx";
 // import { useNavigate } from "react-router-dom";
+// import { useSearch } from "../context/SearchContext.jsx";
 
 const NavBar = () => {
   // const navigate = useNavigate();
+  const cart = useSelector((state) => state.cart);
+  // const { user, logout } = useAuth();
+  const quantity = cart.reduce((acc, item) => acc + item.quantity, 0);
+  // const { search, setSearch } = useSearch();
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  // const handleLogout = () => {
+  //   logout();
+  //   setIsUserMenuOpen(false);
+  //   navigate("/login");
+  // };
 
   return (
     <nav className="bg-blue-300 shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
@@ -54,21 +68,34 @@ const NavBar = () => {
           >
             <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.46-1.12.75.75 0 00-.429-1.455c-.182.075-.37.14-.559.193l-13.27-3.438A.75.75 0 005.14 6.63l-1.26-4.725A.75.75 0 003.13 1.5H2.25zM16.5 21a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.75 21a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
           </svg>
+          {quantity > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">
+              {quantity}
+            </span>
+          )}
         </Link>
-        <>
-          <Link
-            to="/login"
-            className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
+
+        <div className="relative">
+          <button
+            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+            className="text-gray-600 hover:text-gray-800"
           >
-            Login
-          </Link>
-          <Link
-            to="/signup"
-            className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-md text-sm font-medium"
-          >
-            Signup
-          </Link>
-        </>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-7 h-7"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </nav>
   );

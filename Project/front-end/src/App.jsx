@@ -4,10 +4,12 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import View from "./components/View";
 
 const App = () => {
   return (
     <>
+      <View />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
