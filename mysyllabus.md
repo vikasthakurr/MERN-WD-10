@@ -192,6 +192,11 @@
 - Database Integration
 - bcrypt & JWT
 - Web Sockets
+- Deploying Node.js Applications
+- ci/cd with github
+- Load Balancer
+- Containerization
+- Rate Limiting
 
 ## MongoDB
 
@@ -202,4 +207,11 @@
 - Mongoose Models
 - Mongoose Validation
 - Mongoose Middleware
-
+- Indexing & Aggregation
+- Aggregation Pipeline
+- Aggregation Operators
+- Aggregation Lookup
+- Aggregation Unwind
+- Aggregation Match
+- Aggregation Sort
+- Aggregation Limit & Skip

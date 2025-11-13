@@ -6,7 +6,7 @@ import {
   decreaseQuantity,
 } from "../redux/cartSlice.js";
 
-const Card = ({ productObj }) => {
+const Card = ({ productObj, onQuickView }) => {
   const dispatch = useDispatch();
   const productInCart = useSelector((state) =>
     state.cart.find((item) => item.id === productObj.id)
@@ -39,7 +39,7 @@ const Card = ({ productObj }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden w-72 group transform transition-transform duration-300 hover:-translate-y-2">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden w-72 group transform transition-transform duration-300 hover:-translate-y-2 relative">
       <figure className="relative w-full h-48 overflow-hidden">
         <img
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -48,6 +48,14 @@ const Card = ({ productObj }) => {
         />
         <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
           {productObj.discountPercentage.toFixed(0)}% OFF
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={() => onQuickView(productObj)}
+            className="bg-white text-gray-800 px-4 py-2 rounded-lg font-bold"
+          >
+            Quick View
+          </button>
         </div>
       </figure>
       <div className="p-4 flex flex-col grow">

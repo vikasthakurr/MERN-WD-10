@@ -8,15 +8,19 @@ import store from "./redux/store.js";
 import { BrowserRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/store.js";
-// import { SearchProvider } from "./context/SearchContext.jsx";
-// import { AuthProvider } from "./context/AuthContext.jsx";
+import { SearchProvider } from "./context/SearchContext.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <PersistGate persistor={persistor} loading={null}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <AuthProvider>
+        <SearchProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SearchProvider>
+      </AuthProvider>
     </PersistGate>
   </Provider>
 );
