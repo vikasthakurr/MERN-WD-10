@@ -15,44 +15,35 @@ const App = () => {
     <>
       <Navbar />
       <Routes>
-        {/* <Route
-          path="/"
-          element={
-            <ProtectedRoutes>
-              <Home />
-            </ProtectedRoutes>
-          }
-        /> */}
-        {/* <Route
+        <Route
           path="/cart"
           element={
             <ProtectedRoutes>
               <Cart />
             </ProtectedRoutes>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/checkout"
           element={
             <ProtectedRoutes>
               <Checkout />
             </ProtectedRoutes>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/profile"
           element={
             <ProtectedRoutes>
               <Profile />
             </ProtectedRoutes>
           }
-        /> */}
+        />
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/profile" element={<Profile />} /> */}
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
