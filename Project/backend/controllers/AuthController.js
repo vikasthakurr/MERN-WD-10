@@ -39,8 +39,7 @@ AuthController.post("/login", async (req, res) => {
     if (!isMatch)
       return res.status(400).json({ message: "Invalid credentials" });
 
-
-    
+    //jwt token will be assign to login for token based authentication
 
     res.status(200).json({ message: "Login successful", user });
   } catch (err) {
