@@ -52,7 +52,7 @@ const Cart = () => {
                 </p>
                 <Link
                   to="/home"
-                  className="mt-8 inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="mt-8 inline-block bg-linear-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Explore Products
                 </Link>
@@ -133,7 +133,7 @@ const Cart = () => {
                 className={`w-full mt-8 py-4 px-6 rounded-full text-white font-semibold text-lg transition-all duration-300 ${
                   cart.length === 0
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transform hover:scale-105"
+                    : "bg-linear-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 transform hover:scale-105"
                 }`}
               >
                 Proceed to Checkout

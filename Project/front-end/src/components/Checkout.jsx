@@ -27,7 +27,7 @@ const Checkout = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-center mb-8">Checkout</h1>
+        <h1 aria-label="Checkout page" className="text-3xl font-bold text-center mb-8">Checkout</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-md p-6 mb-6">
@@ -37,57 +37,63 @@ const Checkout = () => {
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
                       First Name
                     </label>
-                    <input
+                    <input id="firstName"
+                      aria-required="true"
                       type="text"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="lastName"  className="block text-sm font-medium text-gray-700">
                       Last Name
                     </label>
-                    <input
+                    <input id="lastName"
+                      aria-required="true"
                       type="text"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="address" className="block text-sm font-medium text-gray-700">
                     Address
                   </label>
-                  <input
+                  <input  id="address"
+                    aria-required="true"
                     type="text"
                     className="w-full mt-1 p-2 border rounded-md"
                   />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="city" className="block text-sm font-medium text-gray-700">
                       City
                     </label>
-                    <input
+                    <input  id="city"
+                      aria-required="true"
                       type="text"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="state" className="block text-sm font-medium text-gray-700">
                       State
                     </label>
-                    <input
+                    <input id="state"
+                      aria-required="true"
                       type="text"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="zip" className="block text-sm font-medium text-gray-700">
                       ZIP Code
                     </label>
-                    <input
+                    <input  id="zip"
+                      aria-required="true"
                       type="text"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
@@ -101,10 +107,11 @@ const Checkout = () => {
               </h2>
               <form className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-700">
                     Card Number
                   </label>
-                  <input
+                  <input id="cardNumber"
+                    aria-required="true"
                     type="text"
                     placeholder="0000 0000 0000 0000"
                     className="w-full mt-1 p-2 border rounded-md"
@@ -112,20 +119,22 @@ const Checkout = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="expiry" className="block text-sm font-medium text-gray-700">
                       Expiry Date
                     </label>
-                    <input
+                    <input id="expiry"
+                      aria-required="true"
                       type="text"
                       placeholder="MM/YY"
                       className="w-full mt-1 p-2 border rounded-md"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="cvv" className="block text-sm font-medium text-gray-700">
                       CVV
                     </label>
-                    <input
+                    <input id="cvv"
+                      aria-required="true"
                       type="text"
                       placeholder="123"
                       className="w-full mt-1 p-2 border rounded-md"
@@ -152,7 +161,7 @@ const Checkout = () => {
                       />
                       <div>
                         <p className="font-semibold">{item.title}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500" aria-live="polite">
                           Qty: {item.quantity}
                         </p>
                       </div>
@@ -177,7 +186,7 @@ const Checkout = () => {
                   <p>${totalAmount.toFixed(2)}</p>
                 </div>
               </div>
-              <button
+              <button aria-label={`Pay ${totalAmount.toFixed(2)} dollars`} aria-busy={isProcessing}
                 onClick={handlePayment}
                 disabled={isProcessing}
                 className={`w-full mt-6 py-3 rounded-lg font-semibold text-lg text-white transition-colors duration-300 ${

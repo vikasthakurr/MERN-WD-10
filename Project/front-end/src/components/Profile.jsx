@@ -42,7 +42,7 @@ const Profile = () => {
                 <img
                   className="w-24 h-24 rounded-full"
                   src={user.avatar}
-                  alt="User avatar"
+                  alt={`${user.username} profile picture`}
                 />
               </div>
               <div className="mt-4 text-center sm:mt-0 sm:text-left">
@@ -54,7 +54,7 @@ const Profile = () => {
             </div>
             <div className="mt-5 sm:mt-0">
               <button
-                onClick={handleEditToggle}
+                onClick={handleEditToggle} aria-expanded={isEditing} aria-label={isEditing ? "Cancel profile editing" : "Edit profile"}
                 className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 {isEditing ? "Cancel" : "Edit Profile"}
@@ -64,7 +64,7 @@ const Profile = () => {
 
           <div className="border-t border-gray-200">
             {isEditing ? (
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
+              <form onSubmit={handleSubmit} className="p-6 space-y-6" aria-live="polite">
                 <div>
                   <label
                     htmlFor="username"

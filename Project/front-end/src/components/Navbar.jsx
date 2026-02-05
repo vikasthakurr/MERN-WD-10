@@ -18,6 +18,7 @@ const NavBar = () => {
     setIsUserMenuOpen(false);
     navigate("/login");
   };
+  
 
   return (
     <nav className="bg-blue-300 shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
@@ -41,7 +42,7 @@ const NavBar = () => {
             placeholder="Search for products, brands and more"
             className="w-full px-4 py-2 text-gray-700 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button className="absolute right-0 top-0 mt-2 mr-2">
+          <button aria-label="Search products" className="absolute right-0 top-0 mt-2 mr-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -61,15 +62,8 @@ const NavBar = () => {
       </div>
 
       <div className="flex items-center space-x-6">
-        <Link to="/cart" className="relative text-gray-600 hover:text-gray-800">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-7 h-7"
-          >
-            <path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.46-1.12.75.75 0 00-.429-1.455c-.182.075-.37.14-.559.193l-13.27-3.438A.75.75 0 005.14 6.63l-1.26-4.725A.75.75 0 003.13 1.5H2.25zM16.5 21a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.75 21a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-          </svg>
+        <Link to="/cart" aria-label="Open cart" className="relative text-gray-600 hover:text-gray-800">
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           {quantity > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">
               {quantity}
@@ -78,24 +72,11 @@ const NavBar = () => {
         </Link>
 
         <div className="relative">
-          <button
+          <button aria-label="User menu"
             onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
             className="text-gray-600 hover:text-gray-800"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-              />
-            </svg>
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-pen-icon lucide-user-pen"><path d="M11.5 15H7a4 4 0 0 0-4 4v2"/><path d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/><circle cx="10" cy="7" r="4"/></svg>
           </button>
           {isUserMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
