@@ -23,7 +23,7 @@ const Card = ({ productObj, onQuickView }) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <svg
+        <svg aria-hidden="true"
           key={i}
           className={`w-5 h-5 ${
             i <= Math.round(rating) ? "text-yellow-400" : "text-gray-300"
@@ -46,11 +46,11 @@ const Card = ({ productObj, onQuickView }) => {
           src={productObj.thumbnail}
           alt={productObj.title}
         />
-        <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+        <div aria-label={`${productObj.discountPercentage.toFixed(0)} percent discount`} className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
           {productObj.discountPercentage.toFixed(0)}% OFF
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
+          <button  aria-label={`Quick view of ${productObj.title}`}
             onClick={() => onQuickView(productObj)}
             className="bg-white text-gray-800 px-4 py-2 rounded-lg font-bold"
           >
@@ -80,14 +80,14 @@ const Card = ({ productObj, onQuickView }) => {
         <div className="mt-4 grow flex items-end">
           {productInCart ? (
             <div className="w-full flex items-center justify-between">
-              <button
+              <button aria-label="Decrease product quantity"
                 onClick={() => dispatch(decreaseQuantity(productObj))}
                 className="px-3 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
               >
                 -
               </button>
               <span className="text-lg font-semibold">{quantity}</span>
-              <button
+              <button aria-label="Increase product quantity"
                 onClick={() => dispatch(increaseQuantity(productObj))}
                 className="px-3 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
               >
@@ -95,7 +95,7 @@ const Card = ({ productObj, onQuickView }) => {
               </button>
             </div>
           ) : (
-            <button
+            <button aria-label={`Add ${productObj.title} to cart`}
               onClick={() => dispatch(addToCart(productObj))}
               className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold transition-colors duration-300"
             >

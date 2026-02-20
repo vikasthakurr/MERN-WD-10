@@ -88,7 +88,7 @@ const Home = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       stars.push(
-        <svg
+        <svg aria-hidden="true"
           key={i}
           className={`w-5 h-5 ${
             i <= rating ? "text-yellow-400" : "text-gray-300"
@@ -105,14 +105,14 @@ const Home = () => {
 
   return (
     <div className="flex bg-blue-50 min-h-screen">
-      <aside
+      <aside aria-label="Product filters"
         className={`fixed inset-y-0 left-0 w-72 bg-white shadow-xl p-6 transform ${
           isFilterOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-30`}
       >
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-blue-600">Filters</h2>
-          <button
+          <button aria-label="Open filters"
             onClick={() => setIsFilterOpen(false)}
             className="text-gray-500 hover:text-blue-600"
           >
@@ -192,7 +192,7 @@ const Home = () => {
           <div>
             <h3 className="font-semibold mb-3 text-gray-800 text-lg">Price Range</h3>
             <div className="flex items-center">
-              <input
+              <input aria-label="Filter by price range"
                 type="range"
                 min="0"
                 max="3000"
@@ -213,7 +213,7 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-10">
-          <button
+          <button aria-label="Clear all filters"
             onClick={clearFilters}
             className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-3 rounded-lg font-bold transition-colors duration-300 shadow-md"
           >
@@ -224,13 +224,13 @@ const Home = () => {
       <main className="flex-1 p-6 lg:p-10">
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center">
-            <button
+            <button aria-label="Open filters"
               onClick={() => setIsFilterOpen(true)}
               className="lg:hidden mr-4 p-3 rounded-md bg-blue-500 text-white shadow-md"
             >
               <FiFilter size={22} />
             </button>
-            <span className="text-xl text-gray-700">
+            <span className="text-xl text-gray-700" aria-live="polite">
               Showing {filteredProducts.length} of {products.length} products
             </span>
           </div>
@@ -261,7 +261,8 @@ const Home = () => {
           ))}
         </div>
       </main>
-      <ProductModal
+      <ProductModal role="dialog"
+        aria-modal="true"
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
       />

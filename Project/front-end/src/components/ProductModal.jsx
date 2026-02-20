@@ -22,10 +22,11 @@ const ProductModal = ({ product, onClose }) => {
   ).toFixed(2);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" role="dialog"
+     aria-modal="true" aria-labelledby="product-title">
       <div className="bg-white rounded-lg shadow-2xl w-full max-w-4xl h-full max-h-[90vh] flex p-6 relative">
         <button
-          onClick={onClose}
+          onClick={onClose} aria-label="Close product details"
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
         >
           <IoClose size={28} />
@@ -38,7 +39,7 @@ const ProductModal = ({ product, onClose }) => {
           />
         </div>
         <div className="w-1/2 pl-6 border-l border-gray-200 flex flex-col">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 id="product-title" className="text-3xl font-bold text-gray-900 mb-4">
             {product.title}
           </h2>
           <p className="text-gray-600 mb-6">{product.description}</p>
@@ -77,14 +78,14 @@ const ProductModal = ({ product, onClose }) => {
           <div className="mt-auto">
             {productInCart ? (
               <div className="w-full flex items-center justify-between">
-                <button
+                <button aria-label="Decrease quantity"
                   onClick={() => dispatch(decreaseQuantity(product))}
                   className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 text-lg"
                 >
                   -
                 </button>
                 <span className="text-xl font-semibold">{quantity}</span>
-                <button
+                <button aria-label="Increase quantity"
                   onClick={() => dispatch(increaseQuantity(product))}
                   className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 text-lg"
                 >
@@ -92,7 +93,7 @@ const ProductModal = ({ product, onClose }) => {
                 </button>
               </div>
             ) : (
-              <button
+              <button aria-label={`Add ${product.title} to cart`}
                 onClick={() => dispatch(addToCart(product))}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold text-lg transition-colors duration-300"
               >
